@@ -1,12 +1,100 @@
-<div class="p-3 border rounded-4 shadow-sm bg-white mt-5" style="width: 250px;">
+<button class="btn btn-outline-dark d-lg-none mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">
+  Filters
+</button>
+
+<!-- Offcanvas للشاشات الصغيرة -->
+<div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="filtersOffcanvas" aria-labelledby="filtersOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title fw-bold" id="filtersOffcanvasLabel">Filters</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- هنا نفس الفيو بتاع الفلاتر -->
+    <div class="p-3 border rounded-4 shadow-sm bg-white px-4 side">
+      <h6 class="fw-bold mb-3">Filters</h6>
+
+      <!-- Price Range -->
+      <div class="mb-4">
+        <h6 class="text-muted mb-2">Price Range (EGP)</h6>
+        <input type="range" class="form-range" min="50" max="5000" step="50" id="priceRange" oninput="updatePriceValue(this.value)">
+        <div class="d-flex justify-content-between">
+          <span id="priceValue" class="fw-bold">EGP 50</span>
+          <span class="text-muted">Max: EGP 5000</span>
+        </div>
+      </div>
+
+      <!-- Colors -->
+      <div class="mb-4">
+        <h6 class="text-muted mb-2">Colors</h6>
+        <div class="d-flex flex-wrap gap-2">
+          <div class="rounded-circle border" style="background-color: pink; width: 30px; height: 30px; cursor: pointer;"></div>
+          <div class="rounded-circle border" style="background-color: #fff3cd; width: 30px; height: 30px; cursor: pointer;"></div>
+          <div class="rounded-circle border" style="background-color: #f8d7f3; width: 30px; height: 30px; cursor: pointer;"></div>
+          <div class="rounded-circle border" style="background-color: #a0522d; width: 30px; height: 30px; cursor: pointer;"></div>
+          <div class="rounded-circle border" style="background-color: #000; width: 30px; height: 30px; cursor: pointer;"></div>
+        </div>
+      </div>
+
+      <!-- Style -->
+      <div class="mb-4">
+        <h6 class="text-muted mb-2">Style</h6>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="style1">
+          <label class="form-check-label" for="style1">Tote Bags</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="style2">
+          <label class="form-check-label" for="style2">Crossbody</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="style3">
+          <label class="form-check-label" for="style3">Clutch</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="style4">
+          <label class="form-check-label" for="style4">Backpack</label>
+        </div>
+      </div>
+
+      <!-- Material -->
+      <div class="mb-4">
+        <h6 class="text-muted mb-2">Material</h6>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="material1">
+          <label class="form-check-label" for="material1">Leather</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="material2">
+          <label class="form-check-label" for="material2">Crochet</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="material3">
+          <label class="form-check-label" for="material3">Woven</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="material4">
+          <label class="form-check-label" for="material4">Canvas</label>
+        </div>
+      </div>
+
+      <!-- Clear Button -->
+      <button class="btn w-100 text-white rounded-3" style="background-color: #9b4d63;">
+        Clear Filters
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar للشاشات الكبيرة -->
+<div class="d-none d-lg-block p-3 border rounded-4 shadow-sm bg-white mt-5 px-4 side">
   <h6 class="fw-bold mb-3">Filters</h6>
 
   <!-- Price Range -->
   <div class="mb-4">
     <h6 class="text-muted mb-2">Price Range (EGP)</h6>
-    <input type="range" class="form-range " min="50" max="5000" step="50" id="priceRange" oninput="updatePriceValue(this.value)">
+    <input type="range" class="form-range" min="50" max="5000" step="50" id="priceRangeDesktop" oninput="updatePriceValueDesktop(this.value)">
     <div class="d-flex justify-content-between">
-      <span id="priceValue" class="fw-bold ">EGP 50</span>
+      <span id="priceValueDesktop" class="fw-bold">EGP 50</span>
       <span class="text-muted">Max: EGP 5000</span>
     </div>
   </div>
@@ -27,20 +115,20 @@
   <div class="mb-4">
     <h6 class="text-muted mb-2">Style</h6>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="style1">
-      <label class="form-check-label" for="style1">Tote Bags</label>
+      <input class="form-check-input" type="checkbox" id="style1Desktop">
+      <label class="form-check-label" for="style1Desktop">Tote Bags</label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="style2">
-      <label class="form-check-label" for="style2">Crossbody</label>
+      <input class="form-check-input" type="checkbox" id="style2Desktop">
+      <label class="form-check-label" for="style2Desktop">Crossbody</label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="style3">
-      <label class="form-check-label" for="style3">Clutch</label>
+      <input class="form-check-input" type="checkbox" id="style3Desktop">
+      <label class="form-check-label" for="style3Desktop">Clutch</label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="style4">
-      <label class="form-check-label" for="style4">Backpack</label>
+      <input class="form-check-input" type="checkbox" id="style4Desktop">
+      <label class="form-check-label" for="style4Desktop">Backpack</label>
     </div>
   </div>
 
@@ -48,25 +136,25 @@
   <div class="mb-4">
     <h6 class="text-muted mb-2">Material</h6>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="material1">
-      <label class="form-check-label" for="material1">Leather</label>
+      <input class="form-check-input" type="checkbox" id="material1Desktop">
+      <label class="form-check-label" for="material1Desktop">Leather</label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="material2">
-      <label class="form-check-label" for="material2">Crochet</label>
+      <input class="form-check-input" type="checkbox" id="material2Desktop">
+      <label class="form-check-label" for="material2Desktop">Crochet</label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="material3">
-      <label class="form-check-label" for="material3">Woven</label>
+      <input class="form-check-input" type="checkbox" id="material3Desktop">
+      <label class="form-check-label" for="material3Desktop">Woven</label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="material4">
-      <label class="form-check-label" for="material4">Canvas</label>
+      <input class="form-check-input" type="checkbox" id="material4Desktop">
+      <label class="form-check-label" for="material4Desktop">Canvas</label>
     </div>
   </div>
 
   <!-- Clear Button -->
-  <button class="btn w-100 text-white rounded-pill" style="background-color: #9b4d63;">
+  <button class="btn w-100 text-white rounded-3" style="background-color: #9b4d63;">
     Clear Filters
   </button>
 </div>

@@ -35,3 +35,10 @@
     background: #e0e0e0;
     border-radius: 4px;
   }
+
+  @media (max-width: 767.98px) {
+  .offcanvas-body {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
