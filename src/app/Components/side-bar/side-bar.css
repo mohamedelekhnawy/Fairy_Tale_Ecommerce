@@ -1,0 +1,37 @@
+  #priceRange::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 4px;
+  }
+
+  /* الجزء اللي قبل المؤشر */
+  #priceRange {
+    accent-color: #9b4d63; /* بيغير اللون في معظم المتصفحات الجديدة */
+  }
+
+  /* Thumb (المؤشر نفسه) */
+  #priceRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #9b4d63;
+    cursor: pointer;
+    margin-top: -6px; /* عشان يبقى في النص */
+  }
+
+  #priceRange::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #9b4d63;
+    cursor: pointer;
+  }
+
+  /* Track للـ Firefox */
+  #priceRange::-moz-range-track {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 4px;
+  }
