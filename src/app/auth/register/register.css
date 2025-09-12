@@ -1,0 +1,180 @@
+/* Page background */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fde2f3;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main box */
+.register-box {
+  display: flex;
+  width: 80%;
+  max-width: 1000px;
+  min-height: 600px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Left side (form) */
+.form-side {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 28px;
+  color: #a00040;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #a00040;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #ff477e, #a00040);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button[disabled] {
+  background: linear-gradient(90deg, #ff7a7a 0%, #d15bff 100%);
+  cursor: not-allowed;
+}
+
+.error small {
+  color: red;
+  font-size: 12px;
+}
+
+/* Terms */
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.terms input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.terms label {
+  cursor: pointer;
+}
+
+.terms a {
+  color: #a00040;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link .link {
+  color: #a00040;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-link .link:hover {
+  text-decoration: underline;
+}
+
+
+/* Right side (images) */
+.image-side {
+  flex: 1;
+  padding: 40px;
+  text-align: center;
+  background: #fde2f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-side h2 {
+  color: #a00040;
+  margin-bottom: 20px;
+}
+
+.collections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+blockquote {
+  margin: 20px 0;
+  font-style: italic;
+  color: #9f2e2e;
+}
+
+.desc {
+  font-size: 14px;
+  color: #6e3d3d;
+}

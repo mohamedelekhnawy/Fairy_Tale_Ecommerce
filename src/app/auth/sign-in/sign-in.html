@@ -1,0 +1,52 @@
+<div class="auth-page">
+  <div class="card">
+    <h1 class="brand">Fairy Tale</h1>
+    <p class="subtitle">Welcome back to your magical journey</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label>Email Address</label>
+      <div class="input">
+        <span class="icon">📧</span>
+        <input formControlName="email" placeholder="your@email.com" />
+      </div>
+      <div class="error" *ngIf="f['email'].touched && f['email'].invalid">
+  <small *ngIf="f['email'].errors?.['required']">Email is required</small>
+  <small *ngIf="f['email'].errors?.['email']">Invalid email</small>
+</div>
+
+      <label>Password</label>
+      <div class="input">
+        <span class="icon">🔒</span>
+        <input type="password" formControlName="password" placeholder="••••••" />
+      </div>
+      <div class="error" *ngIf="f['password'].touched && f['password'].invalid">
+  <small *ngIf="f['password'].errors?.['required']">Password is required</small>
+  <small *ngIf="f['password'].errors?.['minlength']">At least 6 characters</small>
+</div>
+
+      <button class="btn" type="submit" [disabled]="loading">
+        <span *ngIf="!loading">🔑 Sign In</span>
+        <span *ngIf="loading">Signing in...</span>
+      </button>
+
+      <a class="forgot">Forgot your password?</a>
+
+      <div class="separator"><span>or</span></div>
+
+     <div class="social google">
+  <i class="fa fa-google"></i> Continue with Google
+</div>
+
+<div class="social facebook">
+  <i class="fa fa-facebook"></i> Continue with Facebook
+</div>
+      <div class="server-error" *ngIf="serverError">{{ serverError }}</div>
+
+      <p class="signup">
+  Don’t have an account?
+  <a routerLink="/register">Create Account</a>
+</p>
+
+    </form>
+  </div>
+</div>
