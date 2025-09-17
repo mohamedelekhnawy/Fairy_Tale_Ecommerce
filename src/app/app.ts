@@ -4,9 +4,11 @@ import { Products } from './Components/products/products';
 import { Register } from './auth/register/register';
 import { SignInComponent } from './auth/sign-in/sign-in';
 import { HomepageComponent } from './Components/homepage/homepage.component';
+import { Navbar } from './Components/navbar/navbar';
+import { Footer } from './Components/footer/footer';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Products , Register , SignInComponent, HomepageComponent],
+  imports: [RouterOutlet,Products , Register , SignInComponent, HomepageComponent,Navbar,Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
