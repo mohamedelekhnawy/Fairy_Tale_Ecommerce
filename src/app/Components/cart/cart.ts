@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../../Service/cart-service';
 import { CommonModule, CurrencyPipe } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.html',
-  imports: [CommonModule, CurrencyPipe], // هنا ضفنا الـ CurrencyPipe
+  imports: [CommonModule, CurrencyPipe,RouterLink], // هنا ضفنا الـ CurrencyPipe
   styleUrls: ['./cart.css']
 })
 export class Cart implements OnInit {

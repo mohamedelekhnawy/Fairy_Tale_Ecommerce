@@ -11,6 +11,10 @@
                 <li class="nav-item"><a class="nav-link" href="Products">Shop</a></li>
                 <li class="nav-item"><a class="nav-link" href="About">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="Contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a routerLink="/products" class="nav-link" href="#">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
             <div class="d-flex ms-lg-3">
 
@@ -25,6 +29,16 @@
                 <!-- <a href="#" class="btn btn-link text-dark me-2"><i class="fa-regular fa-heart"></i></a>
                 <a href="#" class="btn btn-link text-dark"><i class="fa-regular fa-user"></i></a>
                 <a href="#" class="btn btn-link text-dark"><i class="fa-solid fa-bag-shopping"></i></a> -->
+                <button class="btn btn-link text-dark me-2"><i class="fa-regular fa-heart"></i></button>
+                <button class="btn btn-link text-dark"><i class="fa-regular fa-user"></i></button>
+                <button class="btn btn-link text-dark position-relative" (routerLink)="['/cart']">
+                    <i class="fa-solid fa-bag-shopping" [ngClass]="{'added': cartCount > 0}"></i>
+                    <span class="badge bg-pink position-absolute top-0 start-100 translate-middle"
+                        *ngIf="cartCount > 0">{{ cartCount }}</span>
+                </button>
+
+
+
             </div>
         </div>
     </div>

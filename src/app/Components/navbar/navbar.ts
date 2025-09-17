@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../Service/cart-service';
-import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.css']
 })

@@ -9,7 +9,15 @@
     max-width: 1000px;
 }
 
+.card i {
+    color: #8b5a8c;
+}
 
+h2,
+h3 {
+    color: #8b5a8c;
+
+}
 
 .payment-card {
     border: 2px solid #e0e0e0;
@@ -31,7 +39,7 @@
     box-shadow: 0 4px 12px rgba(139, 90, 140, 0.2);
 }
 
-.payment-card i {
+.icon-color {
     color: #8b5a8c;
 }
 
@@ -84,13 +92,14 @@
     color: #fff;
     border: none;
     border-radius: 12px;
-    transition: 0.3s ease;
+    background-size: 130% 100%;
+    transition: all 0.3s ease;
 }
 
 .place-order-btn:hover {
-    background: linear-gradient(to right, #e5b1b1, #7b3a5d);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(139, 90, 140, 0.3);
+    background-position: 100% 0;
 }
 
 .secure-note {
