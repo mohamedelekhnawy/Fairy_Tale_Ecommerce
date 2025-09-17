@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],  // ✅ أضفنا CommonModule و ReactiveFormsModule
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './sign-in.html',
   styleUrls: ['./sign-in.css']
 })
@@ -30,6 +30,5 @@ export class SignInComponent {
   onSubmit() {
     if (this.loginForm.invalid) return;
     this.loading = true;
-    // هنا هيبقى كود اللوجين مع الـ backend
   }
 }

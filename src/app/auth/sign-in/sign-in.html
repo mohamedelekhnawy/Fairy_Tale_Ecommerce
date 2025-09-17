@@ -6,26 +6,26 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <label>Email Address</label>
       <div class="input">
-        <span class="icon">📧</span>
+        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
         <input formControlName="email" placeholder="your@email.com" />
       </div>
       <div class="error" *ngIf="f['email'].touched && f['email'].invalid">
-  <small *ngIf="f['email'].errors?.['required']">Email is required</small>
-  <small *ngIf="f['email'].errors?.['email']">Invalid email</small>
-</div>
+        <small *ngIf="f['email'].errors?.['required']">Email is required</small>
+        <small *ngIf="f['email'].errors?.['email']">Invalid email</small>
+      </div>
 
       <label>Password</label>
       <div class="input">
-        <span class="icon">🔒</span>
+        <span class="icon"><i class="fa-solid fa-lock"></i></span>
         <input type="password" formControlName="password" placeholder="••••••" />
       </div>
       <div class="error" *ngIf="f['password'].touched && f['password'].invalid">
-  <small *ngIf="f['password'].errors?.['required']">Password is required</small>
-  <small *ngIf="f['password'].errors?.['minlength']">At least 6 characters</small>
-</div>
+        <small *ngIf="f['password'].errors?.['required']">Password is required</small>
+        <small *ngIf="f['password'].errors?.['minlength']">At least 6 characters</small>
+      </div>
 
       <button class="btn" type="submit" [disabled]="loading">
-        <span *ngIf="!loading">🔑 Sign In</span>
+        <span *ngIf="!loading"><i class="fa-solid fa-key"></i>  Sign In</span>
         <span *ngIf="loading">Signing in...</span>
       </button>
 
@@ -33,20 +33,19 @@
 
       <div class="separator"><span>or</span></div>
 
-     <div class="social google">
-  <i class="fa fa-google"></i> Continue with Google
-</div>
+      <div class="social google">
+        <i class="fa fa-google"></i> Continue with Google
+      </div>
 
-<div class="social facebook">
-  <i class="fa fa-facebook"></i> Continue with Facebook
-</div>
+      <div class="social facebook">
+        <i class="fa fa-facebook"></i> Continue with Facebook
+      </div>
       <div class="server-error" *ngIf="serverError">{{ serverError }}</div>
 
       <p class="signup">
-  Don’t have an account?
-  <a routerLink="/register">Create Account</a>
-</p>
-
+        Don’t have an account?
+        <a routerLink="/Register">Create Account</a>
+      </p>
     </form>
   </div>
 </div>

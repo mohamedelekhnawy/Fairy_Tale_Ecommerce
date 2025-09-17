@@ -31,7 +31,9 @@
               "https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
+
             ]
           },
           "configurations": {
