@@ -10,7 +10,7 @@ import { Cart } from './Components/cart/cart';
 import { CheckOut } from './Components/check-out/check-out';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Products , Register , SignInComponent, HomepageComponent,Navbar,Footer,Cart,CheckOut],
+  imports: [RouterOutlet,Navbar,Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
