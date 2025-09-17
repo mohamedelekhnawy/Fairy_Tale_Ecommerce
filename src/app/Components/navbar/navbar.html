@@ -15,7 +15,9 @@
             <div class="d-flex ms-lg-3">
                 <button class="btn btn-link text-dark me-2"><i class="fa-regular fa-heart"></i></button>
                 <button class="btn btn-link text-dark"><i class="fa-regular fa-user"></i></button>
-                <button class="btn btn-link text-dark"><i class="fa-solid fa-bag-shopping"></i></button>
+                <button class="btn btn-link text-dark"><i class="fa-solid fa-bag-shopping">
+                    <span class="badge bg-pink" *ngIf="cartCount > 0">{{ cartCount }}</span>
+                </i></button>
             </div>
         </div>
     </div>

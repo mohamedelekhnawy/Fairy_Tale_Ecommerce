@@ -1,0 +1,21 @@
+.cart-container {
+    max-width: 1200px;
+}
+
+.text-pink {
+    color: #e83e8c;
+}
+
+.btn-pink {
+    background-color: #e83e8c;
+    color: white;
+}
+
+.btn-pink:hover {
+    background-color: #d63384;
+    color: white;
+}
+
+.cart-item img {
+    object-fit: cover;
+}

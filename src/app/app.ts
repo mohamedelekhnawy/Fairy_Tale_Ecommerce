@@ -6,9 +6,11 @@ import { SignInComponent } from './auth/sign-in/sign-in';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { Navbar } from './Components/navbar/navbar';
 import { Footer } from './Components/footer/footer';
+import { Cart } from './Components/cart/cart';
+import { CheckOut } from './Components/check-out/check-out';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Products , Register , SignInComponent, HomepageComponent,Navbar,Footer],
+  imports: [RouterOutlet,Products , Register , SignInComponent, HomepageComponent,Navbar,Footer,Cart,CheckOut],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
