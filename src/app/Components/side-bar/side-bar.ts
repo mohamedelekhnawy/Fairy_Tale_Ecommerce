@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ProductFilter } from '../../models/product-filter';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ProductFilter } from '../../models/product-filter';
 
 @Component({
   selector: 'app-side-bar',

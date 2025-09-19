@@ -7,13 +7,13 @@ import { CheckOut } from './Components/check-out/check-out';
 import { AboutComponent } from './Components/about/about';
 import { ContactComponent } from './Components/contact/contact';
 import { ProductDetails } from './Components/product-details/product-details';
-import { Home } from './Components/home/home';
+import { Home } from './Components/home/home';     // ✅ صححت الـ import
 import { FaqComponent } from './Components/faq/faq';
 import { FavoritesComponent } from './Components/favorites/favorites';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
-  { path: 'Home', component:Home },
+  { path: 'Home', component: Home },
   { path: 'Login', component: SignInComponent },
   { path: 'Register', component: Register },
   { path: 'Products', component: Products },
@@ -22,6 +22,6 @@ export const routes: Routes = [
   { path: 'Cart', component: Cart },
   { path: 'CheckOut', component: CheckOut },
   { path: 'product/:id', component: ProductDetails },
-  {path:'faq',component:FaqComponent},
-  {path:'favorites',component:FavoritesComponent}
+  { path: 'faq', component: FaqComponent },
+  { path: 'favorites', component: FavoritesComponent }
 ];

@@ -10,15 +10,25 @@
                 <li class="nav-item"><a class="nav-link" routerLink="/Home" routerLinkActive="active">Home</a></li>
                 <li class="nav-item"><a class="nav-link" routerLink="/Products" routerLinkActive="active">Shop</a></li>
                 <li class="nav-item"><a class="nav-link" routerLink="/About" routerLinkActive="active">About</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/Contact" routerLinkActive="active">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/Contact" routerLinkActive="active">Contact</a>
+                </li>
             </ul>
             <div class="d-flex ms-lg-3">
-                <a class="btn btn-link text-dark me-2 nav-icon">
-                    <i class="fa-regular fa-heart"></i>
+                <!-- Favorites Icon with dynamic styling -->
+                <a class="btn btn-link text-dark me-2 nav-icon favorites-icon" (click)="goToFavorites()"
+                    routerLink="/favorites" routerLinkActive="active">
+                    <i class="fa-regular fa-heart" [class.fa-solid]="shouldColorHeart"
+                        [class.has-favorites]="favoritesCount > 0">
+                        <span class="badge favorites-badge" *ngIf="favoritesCount > 0">{{ favoritesCount }}</span>
+                    </i>
                 </a>
+
+                <!-- User Icon -->
                 <a class="btn btn-link text-dark nav-icon">
                     <i class="fa-regular fa-user"></i>
                 </a>
+
+                <!-- Cart Icon -->
                 <a routerLink="/Cart" class="btn btn-link text-dark nav-icon cart-icon">
                     <i class="fa-solid fa-bag-shopping" [class.added]="cartCount > 0">
                         <span class="badge bg-pink cart-badge" *ngIf="cartCount > 0">{{ cartCount }}</span>

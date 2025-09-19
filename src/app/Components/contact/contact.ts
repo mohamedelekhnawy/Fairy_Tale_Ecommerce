@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FaqComponent } from '../faq/faq';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Button1Style } from '../../Directives/button1-style';
@@ -7,7 +8,7 @@ import { ElmentScale } from '../../Directives/elment-scale';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, FormsModule, Button1Style, Button2Style, ElmentScale],
+  imports: [CommonModule, FormsModule, Button1Style, Button2Style, ElmentScale,FaqComponent],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })

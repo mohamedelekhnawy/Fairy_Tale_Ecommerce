@@ -24,7 +24,8 @@ import { Button1Style } from '../../Directives/button1-style';
 })
 export class ProductCards implements OnInit {
 
-  products: Product[] = [];
+  // ✅ استقبل المنتجات من الأب
+  @Input() products: Product[] = [];
 
   // favorite local array (هنجيبها من localStorage)
   favoriteProducts: number[] = [];
@@ -36,7 +37,8 @@ export class ProductCards implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.products = this.productService.getProducts();
+    // ❗ لو المنتجات جاية من الأب، مفيش داعي نجيبها من السيرفس
+    // this.products = this.productService.getProducts();
 
     // تحميل الفيفورت من localStorage لو موجود
     const storedFavs = localStorage.getItem('favorites');
