@@ -1,0 +1,66 @@
+<div class="container py-5">
+  <div class="row g-4"> 
+
+    @for (product of products; track product.id) {
+      <div class="col-12 col-sm-8 col-md-6 col-lg-4"> <!-- ريسبونسيف -->
+        
+        <div class="card product-card border-0 rounded-4 shadow-sm h-100 cursor-pointer">
+          
+          <!-- صورة المنتج + زرار القلب -->
+          <div class="position-relative">
+            <div class="overflow-hidden rounded-top-4">
+              <img 
+                [src]="product.images[0]" 
+                class="card-img-top product-image img-fluid" 
+                [alt]="product.name" 
+                appElmentScale
+                (click)="goToDetails(product.id)">
+            </div>
+
+            <!-- أيقونة Favorite -->
+            <button 
+              type="button"
+              class="btn bg-white shadow-sm rounded-circle p-2 position-absolute top-0 end-0 m-3"
+              (click)="toggleFavorite(product.id); $event.stopPropagation()"
+              appElmentScale>
+              <i 
+                class="fa-heart fs-5"
+                [ngClass]="{ 
+                  'fa-solid text-danger': isFavorite(product.id), 
+                  'fa-regular text-dark': !isFavorite(product.id) 
+                }">
+              </i>
+            </button>
+          </div>
+
+          <!-- بيانات المنتج -->
+          <div class="card-body p-4 d-flex flex-column" (click)="goToDetails(product.id)">
+            
+            <h5 class="card-title mb-3 fw-bold">
+              {{ product.name }}
+            </h5>
+
+            <p class="card-text text-muted mb-4 flex-grow-1">
+              {{ product.description | truncate:80:true }}
+            </p>
+
+            <!-- السعر + زرار الكارت -->
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+              <span class="price fw-bold text-danger fs-5">${{ product.price }}</span>
+
+              <button 
+                class="btn px-4 py-2"
+                (click)="goToDetails(product.id); $event.stopPropagation()"
+                appElmentScale
+                appButton1Style>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    }
+
+  </div>
+</div>

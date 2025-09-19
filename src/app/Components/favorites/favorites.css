@@ -1,0 +1,8 @@
+.favorite-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-8px) scale(1.03); /* يطلع لفوق شوية + تكبير بسيط */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* ظل أقوى */
+}

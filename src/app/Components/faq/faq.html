@@ -1,0 +1,25 @@
+<div class="container py-5">
+  <h2 class="text-center fw-bold mb-4">Frequently Asked Questions</h2>
+  <p class="text-center text-muted mb-5">
+    Everything you need to know about our magical handmade bags and shopping experience.
+  </p>
+
+  <div class="accordion">
+    <div *ngFor="let faq of faqs; let i = index" class="mb-3">
+      <div class="p-3 bg-white rounded shadow-sm cursor-pointer d-flex justify-content-between align-items-center"
+           (click)="toggleFaq(i)">
+        <span class="fw-bold">{{ faq.question }}</span>
+        <i class="fa" [ngClass]="faq.open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+      </div>
+      <div *ngIf="faq.open" class="mt-2 px-3 text-muted">
+        {{ faq.answer }}
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5 p-4 text-center bg-light rounded shadow-sm">
+    <h4 class="fw-bold mb-2">Still have questions?</h4>
+    <p class="text-muted">Our magical customer support team is here to help you with any questions.</p>
+    <button class="btn px-4 py-2">Contact Support</button>
+  </div>
+</div>

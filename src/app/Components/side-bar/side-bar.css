@@ -1,0 +1,41 @@
+  #priceRange::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 4px;
+  }
+
+  #priceRange {
+    accent-color: #9b4d63;
+  }
+
+  #priceRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #9b4d63;
+    cursor: pointer;
+    margin-top: -6px; 
+  }
+
+  #priceRange::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #9b4d63;
+    cursor: pointer;
+  }
+
+  #priceRange::-moz-range-track {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 767.98px) {
+  .offcanvas-body {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
