@@ -1,0 +1,12 @@
+.accordion .cursor-pointer {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.accordion .cursor-pointer:hover {
+  background-color: #c37a7a;
+}
+.btn{
+  color:#fff; 
+  background-color: #c37a7a;
+
+}

@@ -272,6 +272,9 @@ export class ProductService {
     }
   ];
 
+  // Add the missing favorites property
+  private favorites: Product[] = [];
+
   constructor() { }
 
   // Get all products
@@ -346,5 +349,23 @@ export class ProductService {
   // Get product count
   getProductCount(): number {
     return this.products.length;
+  }
+
+  // Favorite management methods (moved inside the class)
+  toggleFavorite(product: Product): void {
+    const index = this.favorites.findIndex(p => p.id === product.id);
+    if (index !== -1) {
+      this.favorites.splice(index, 1);
+    } else {
+      this.favorites.push(product);
+    }
+  }
+
+  isFavorite(id: number): boolean {
+    return this.favorites.some(p => p.id === id);
+  }
+
+  getFavorites(): Product[] {
+    return this.favorites;
   }
 }

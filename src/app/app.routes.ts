@@ -8,6 +8,8 @@ import { AboutComponent } from './Components/about/about';
 import { ContactComponent } from './Components/contact/contact';
 import { ProductDetails } from './Components/product-details/product-details';
 import { Home } from './Components/home/home';
+import { FaqComponent } from './Components/faq/faq';
+import { FavoritesComponent } from './Components/favorites/favorites';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -19,5 +21,7 @@ export const routes: Routes = [
   { path: 'Contact', component: ContactComponent },
   { path: 'Cart', component: Cart },
   { path: 'CheckOut', component: CheckOut },
-  { path: 'product/:id', component: ProductDetails }
+  { path: 'product/:id', component: ProductDetails },
+  {path:'faq',component:FaqComponent},
+  {path:'favorites',component:FavoritesComponent}
 ];

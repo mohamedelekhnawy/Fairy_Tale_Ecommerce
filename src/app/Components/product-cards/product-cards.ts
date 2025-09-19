@@ -1,6 +1,6 @@
 import { Product } from './../../models/product';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ElmentScale } from '../../Directives/elment-scale';
 import { TruncatePipe } from '../../Pipes/truncate-pipe';
 import { CartService } from '../../Service/cart-service';
@@ -11,26 +11,56 @@ import { Button1Style } from '../../Directives/button1-style';
 
 @Component({
   selector: 'app-product-cards',
-  imports: [CommonModule, ElmentScale, TruncatePipe, FormsModule, Button1Style],
+  standalone: true,
+  imports: [
+    CommonModule,
+    ElmentScale,
+    TruncatePipe,
+    FormsModule,
+    Button1Style
+  ],
   templateUrl: './product-cards.html',
-  styleUrl: './product-cards.css'
+  styleUrls: ['./product-cards.css']
 })
-export class ProductCards {
-  
-  @Input() products: Product[] = [];
+export class ProductCards implements OnInit {
 
+  products: Product[] = [];
+
+  // favorite local array (هنجيبها من localStorage)
   favoriteProducts: number[] = [];
 
-  constructor(private cartService: CartService, public router: Router, private productService: ProductService) { 
-  }
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+    private productService: ProductService
+  ) { }
 
   ngOnInit() {
-    // If no products are passed as input, get all products
-    if (!this.products || this.products.length === 0) {
-      this.products = this.productService.getProducts();
+    this.products = this.productService.getProducts();
+
+    // تحميل الفيفورت من localStorage لو موجود
+    const storedFavs = localStorage.getItem('favorites');
+    if (storedFavs) {
+      this.favoriteProducts = JSON.parse(storedFavs);
     }
   }
 
+  // Navigate to product details
+  goToDetails(id: number) {
+    this.router.navigate(['/product', id]);
+  }
+
+  // Add to Cart
+  addToCart(product: Product) {
+    const item = {
+      ...product,
+      image: product.images[0],
+      qty: 1
+    };
+    this.cartService.addItem(item);
+  }
+
+  // Favorite Handling
   isFavorite(productId: number): boolean {
     return this.favoriteProducts.includes(productId);
   }
@@ -41,19 +71,13 @@ export class ProductCards {
     } else {
       this.favoriteProducts.push(productId);
     }
+
+    // تحديث البيانات في localStorage
+    localStorage.setItem('favorites', JSON.stringify(this.favoriteProducts));
   }
 
-  goToDetails(id: number) {
-    this.router.navigate(['/product', id]);
+  // الانتقال لصفحة Favorites
+  goToFavorites(): void {
+    this.router.navigate(['/favorites']);
   }
-
-  addToCart(product: Product) {
-    const item = {
-      ...product,
-      image: product.images[0],
-      qty: 1
-    };
-    this.cartService.addItem(item);
-  }
-
 }
