@@ -1,0 +1,127 @@
+.text-dark-2 {
+  color: #2d3748;
+}
+
+.text-pink {
+  color: #d94e73;
+}
+
+.bg-pink {
+  background-color: #fec7d0;
+}
+
+.contact-hero {
+  background: linear-gradient(135deg, #fec7d0 0%, #f8d7da 100%);
+  min-height: 400px;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: -100px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-info-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #9b4d63, #e07a8b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  margin: 0 auto 1rem;
+}
+
+.form-control:focus {
+  border-color: #e07a8b;
+  box-shadow: 0 0 0 0.2rem rgba(224, 122, 139, 0.25);
+}
+
+.form-label {
+  color: #2d3748;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #9b4d63, #e07a8b);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(155, 77, 99, 0.4);
+  color: white;
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.business-hours {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.hour-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.hour-row:last-child {
+  border-bottom: none;
+}
+
+.day {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.time {
+  color: #6c757d;
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    margin-top: -50px;
+    padding: 1.5rem;
+  }
+  
+  .contact-hero {
+    min-height: 300px;
+  }
+}

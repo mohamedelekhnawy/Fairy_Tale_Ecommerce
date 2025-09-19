@@ -1,0 +1,64 @@
+  #priceRange::-webkit-slider-runnable-track, #priceRangeDesktop::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 4px;
+  }
+
+  #priceRange, #priceRangeDesktop {
+    accent-color: #9b4d63;
+  }
+
+  #priceRange::-webkit-slider-thumb, #priceRangeDesktop::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #9b4d63;
+    cursor: pointer;
+    margin-top: -6px; 
+  }
+
+  #priceRange::-moz-range-thumb, #priceRangeDesktop::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #9b4d63;
+    cursor: pointer;
+  }
+
+  #priceRange::-moz-range-track, #priceRangeDesktop::-moz-range-track {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 4px;
+  }
+
+  .color-option {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid #dee2e6;
+  }
+
+  .color-option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .form-check-input:checked {
+    background-color: #9b4d63;
+    border-color: #9b4d63;
+  }
+
+  .form-check-input:focus {
+    border-color: #9b4d63;
+    box-shadow: 0 0 0 0.25rem rgba(155, 77, 99, 0.25);
+  }
+
+  @media (max-width: 767.98px) {
+  .offcanvas-body {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}

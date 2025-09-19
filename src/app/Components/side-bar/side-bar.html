@@ -1,0 +1,177 @@
+<<button class="btn btn-outline-dark d-lg-none mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvas" aria-controls="filtersOffcanvas">
+  <i class="fas fa-filter me-2"></i>Filters
+</button>
+
+<!-- Offcanvas للشاشات الصغيرة -->
+<div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="filtersOffcanvas" aria-labelledby="filtersOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title fw-bold" id="filtersOffcanvasLabel">Filters</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="p-3 border rounded-4 shadow-sm bg-white px-4 side">
+      <h6 class="fw-bold mb-3">Filters</h6>
+
+      <!-- Price Range -->
+      <div class="mb-4">
+        <h6 class="text-muted mb-2">Price Range</h6>
+        <input 
+          type="range" 
+          class="form-range" 
+          min="50" 
+          max="5000" 
+          step="50" 
+          [value]="filters.priceMax"
+          (input)="onPriceChange(+$event.target.value)"
+          id="priceRange">
+        <div class="d-flex justify-content-between">
+          <span class="fw-bold">${{ filters.priceMin }}</span>
+          <span class="fw-bold">${{ filters.priceMax }}</span>
+        </div>
+      </div>
+
+      <!-- Colors -->
+      <div class="mb-4">
+        <h6 class="text-muted mb-2">Colors</h6>
+        <div class="d-flex flex-wrap gap-2">
+          <div 
+            *ngFor="let color of availableColors" 
+            class="color-option rounded-circle border position-relative"
+            [style.background]="color.color"
+            [style.border-color]="isColorSelected(color.value) ? '#9b4d63' : '#dee2e6'"
+            [style.border-width]="isColorSelected(color.value) ? '3px' : '1px'"
+            (click)="onColorChange(color.value, !isColorSelected(color.value))"
+            [title]="color.name">
+            <i 
+              *ngIf="isColorSelected(color.value)" 
+              class="fas fa-check position-absolute top-50 start-50 translate-middle"
+              [style.color]="color.value === 'White' || color.value === 'Transparent' ? '#000' : '#fff'">
+            </i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Materials -->
+      <div class="mb-4">
+        <h6 class="text-muted mb-2">Material</h6>
+        <div class="form-check" *ngFor="let material of availableMaterials">
+          <input 
+            class="form-check-input" 
+            type="checkbox" 
+            [id]="'material-mobile-' + material"
+            [checked]="isMaterialSelected(material)"
+            (change)="onMaterialChange(material, $event.target.checked)">
+          <label class="form-check-label" [for]="'material-mobile-' + material">
+            {{ material }}
+          </label>
+        </div>
+      </div>
+
+      <!-- Styles -->
+      <div class="mb-4">
+        <h6 class="text-muted mb-2">Style</h6>
+        <div class="form-check" *ngFor="let style of availableStyles">
+          <input 
+            class="form-check-input" 
+            type="checkbox" 
+            [id]="'style-mobile-' + style"
+            [checked]="isStyleSelected(style)"
+            (change)="onStyleChange(style, $event.target.checked)">
+          <label class="form-check-label" [for]="'style-mobile-' + style">
+            {{ style }}
+          </label>
+        </div>
+      </div>
+
+      <button 
+        class="btn w-100 text-white rounded-3" 
+        style="background-color: #9b4d63;"
+        (click)="clearFilters()">
+        <i class="fas fa-times me-2"></i>Clear Filters
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Desktop Filters -->
+<div class="d-none d-lg-block p-3 border rounded-4 shadow-sm bg-white mt-5 px-4 side">
+  <h6 class="fw-bold mb-3">Filters</h6>
+
+  <!-- Price Range -->
+  <div class="mb-4">
+    <h6 class="text-muted mb-2">Price Range</h6>
+    <input 
+      type="range" 
+      class="form-range" 
+      min="50" 
+      max="5000" 
+      step="50" 
+      [value]="filters.priceMax"
+      (input)="onPriceChange(+$event.target.value)"
+      id="priceRangeDesktop">
+    <div class="d-flex justify-content-between">
+      <span class="fw-bold">${{ filters.priceMin }}</span>
+      <span class="fw-bold">${{ filters.priceMax }}</span>
+    </div>
+  </div>
+
+  <!-- Colors -->
+  <div class="mb-4">
+    <h6 class="text-muted mb-2">Colors</h6>
+    <div class="d-flex flex-wrap gap-2">
+      <div 
+        *ngFor="let color of availableColors" 
+        class="color-option rounded-circle border position-relative"
+        [style.background]="color.color"
+        [style.border-color]="isColorSelected(color.value) ? '#9b4d63' : '#dee2e6'"
+        [style.border-width]="isColorSelected(color.value) ? '3px' : '1px'"
+        (click)="onColorChange(color.value, !isColorSelected(color.value))"
+        [title]="color.name">
+        <i 
+          *ngIf="isColorSelected(color.value)" 
+          class="fas fa-check position-absolute top-50 start-50 translate-middle"
+          [style.color]="color.value === 'White' || color.value === 'Transparent' ? '#000' : '#fff'">
+        </i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Materials -->
+  <div class="mb-4">
+    <h6 class="text-muted mb-2">Material</h6>
+    <div class="form-check" *ngFor="let material of availableMaterials">
+      <input 
+        class="form-check-input" 
+        type="checkbox" 
+        [id]="'material-desktop-' + material"
+        [checked]="isMaterialSelected(material)"
+        (change)="onMaterialChange(material, $event.target.checked)">
+      <label class="form-check-label" [for]="'material-desktop-' + material">
+        {{ material }}
+      </label>
+    </div>
+  </div>
+
+  <!-- Styles -->
+  <div class="mb-4">
+    <h6 class="text-muted mb-2">Style</h6>
+    <div class="form-check" *ngFor="let style of availableStyles">
+      <input 
+        class="form-check-input" 
+        type="checkbox" 
+        [id]="'style-desktop-' + style"
+        [checked]="isStyleSelected(style)"
+        (change)="onStyleChange(style, $event.target.checked)">
+      <label class="form-check-label" [for]="'style-desktop-' + style">
+        {{ style }}
+      </label>
+    </div>
+  </div>
+
+  <button 
+    class="btn w-100 text-white rounded-3" 
+    style="background-color: #9b4d63;"
+    (click)="clearFilters()">
+    <i class="fas fa-times me-2"></i>Clear Filters
+  </button>
+</div>

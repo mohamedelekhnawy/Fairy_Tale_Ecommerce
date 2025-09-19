@@ -1,0 +1,290 @@
+<main class="">
+  <!-- About Hero Section -->
+  <section class="about-hero d-flex align-items-center">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-10">
+          <h1 class="display-3 fw-bold text-dark-2 mb-4">Our Fairy Tale Story</h1>
+          <p class="lead text-dark-2 mb-0">
+            Where every thread weaves magic, every stitch tells a story, and every bag carries 
+            the dreams and craftsmanship of passionate artisans.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="story-card" appElmentScale>
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <h2 class="fw-bold text-dark-2 mb-4">Once Upon a Time...</h2>
+                <p class="text-secondary mb-4">
+                  In a cozy atelier filled with colorful threads and sparkling beads, our founder Sarah 
+                  discovered her passion for creating magical accessories that would make every woman 
+                  feel like she was living in her own fairy tale.
+                </p>
+                <p class="text-secondary mb-4">
+                  What started as a dream in 2018 has grown into a thriving community of skilled artisans 
+                  who share the same vision: to create handcrafted bags that are not just accessories, 
+                  but treasured pieces of art that tell a story.
+                </p>
+                <p class="text-secondary mb-0">
+                  Today, Fairy Tale continues to enchant customers worldwide with our commitment to 
+                  quality, sustainability, and the timeless art of handcrafting.
+                </p>
+              </div>
+              <div class="col-lg-6 text-center">
+                <div class="overflow-hidden rounded-3 shadow-lg" appElmentScale>
+                  <img 
+                    src="assets/images/Collection.jpg" 
+                    class="img-fluid" 
+                    alt="Fairy Tale Collection"
+                    style="border-radius: 15px;"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-2 text-dark-2">Our Core Values</h2>
+      <p class="text-center text-secondary mb-5">
+        The principles that guide every stitch and shape every design
+      </p>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6" *ngFor="let value of values">
+          <div class="value-card" appElmentScale>
+            <div class="value-icon">
+              <i [class]="value.icon"></i>
+            </div>
+            <h5 class="fw-bold text-dark-2 mb-3">{{ value.title }}</h5>
+            <p class="text-secondary mb-0">{{ value.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Journey Timeline -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-2 text-dark-2">Our Magical Journey</h2>
+      <p class="text-center text-secondary mb-5">
+        Milestones that shaped our fairy tale story
+      </p>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let milestone of milestones; let i = index" appElmentScale>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">{{ milestone.year }}</div>
+            <h5 class="fw-bold text-dark-2 mb-2">{{ milestone.title }}</h5>
+            <p class="text-secondary mb-0">{{ milestone.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Our Team -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-2 text-dark-2">Meet Our Artisans</h2>
+      <p class="text-center text-secondary mb-5">
+        The talented hands behind every magical creation
+      </p>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" *ngFor="let member of teamMembers">
+          <div class="team-card" appElmentScale>
+            <img 
+              [src]="member.image" 
+              [alt]="member.name"
+              class="team-image d-block"
+            />
+            <h5 class="fw-bold text-dark-2 mb-2">{{ member.name }}</h5>
+            <p class="text-pink fw-semibold mb-3">{{ member.role }}</p>
+            <p class="text-secondary mb-0">{{ member.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Craft Process -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-2 text-dark-2">The Magic Behind Each Bag</h2>
+      <p class="text-center text-secondary mb-5">
+        Our meticulous handcrafting process ensures every piece is perfect
+      </p>
+      <div class="craft-process" appElmentScale>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="process-icon position-relative">
+                <i class="fas fa-lightbulb"></i>
+                <div class="process-number">1</div>
+              </div>
+              <h6 class="fw-bold text-dark-2 mb-2">Design & Inspiration</h6>
+              <p class="text-secondary mb-0">Every bag begins with a spark of creativity and careful design planning.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="process-icon position-relative">
+                <i class="fas fa-cut"></i>
+                <div class="process-number">2</div>
+              </div>
+              <h6 class="fw-bold text-dark-2 mb-2">Material Selection</h6>
+              <p class="text-secondary mb-0">We carefully choose premium materials and sustainable components.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="process-icon position-relative">
+                <i class="fas fa-hands"></i>
+                <div class="process-number">3</div>
+              </div>
+              <h6 class="fw-bold text-dark-2 mb-2">Hand Crafting</h6>
+              <p class="text-secondary mb-0">Skilled artisans meticulously craft each bag with traditional techniques.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="process-icon position-relative">
+                <i class="fas fa-gem"></i>
+                <div class="process-number">4</div>
+              </div>
+              <h6 class="fw-bold text-dark-2 mb-2">Final Touches</h6>
+              <p class="text-secondary mb-0">Quality inspection and beautiful packaging complete the magic.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5 text-dark-2">Our Impact in Numbers</h2>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-card" appElmentScale>
+            <div class="stats-number">1000+</div>
+            <div class="stats-label">Bags Crafted</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-card" appElmentScale>
+            <div class="stats-number">15</div>
+            <div class="stats-label">Skilled Artisans</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-card" appElmentScale>
+            <div class="stats-number">25</div>
+            <div class="stats-label">Countries Served</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-card" appElmentScale>
+            <div class="stats-number">98%</div>
+            <div class="stats-label">Happy Customers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artisan Quote -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="artisan-quote" appElmentScale>
+            <p class="lead text-dark-2 mb-4 px-4">
+              Creating each bag is like writing a love letter to the person who will carry it. 
+              Every bead, every stitch, every detail is chosen with care and crafted with passion. 
+              When someone carries our bag, they carry a piece of our heart and our story.
+            </p>
+            <h6 class="fw-bold text-dark-2 mb-0">- Sarah Johnson, Founder</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sustainability Section -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold text-dark-2 mb-4">Our Commitment to Sustainability</h2>
+          <p class="text-secondary mb-4">
+            At Fairy Tale, we believe that true beauty comes from harmony with nature. 
+            That's why we're committed to sustainable practices in every aspect of our craft.
+          </p>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="fas fa-check-circle text-pink me-3"></i>
+              <span class="text-secondary">Eco-friendly materials sourced responsibly</span>
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-check-circle text-pink me-3"></i>
+              <span class="text-secondary">Zero-waste production methods</span>
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-check-circle text-pink me-3"></i>
+              <span class="text-secondary">Supporting local artisan communities</span>
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-check-circle text-pink me-3"></i>
+              <span class="text-secondary">Recyclable and biodegradable packaging</span>
+            </li>
+          </ul>
+          <a href="/Products" class="btn btn-lg" appButton2Style>Shop Sustainable</a>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="overflow-hidden rounded-3 shadow-lg" appElmentScale>
+            <img 
+              src="assets/images/tuyen-vo-Ak7lAuarT1I-unsplash.jpg" 
+              class="img-fluid" 
+              alt="Sustainable Crafting"
+              style="border-radius: 15px;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Our Story -->
+  <section class="py-5 bg-pink">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3 text-dark-2">Become Part of Our Story</h2>
+      <p class="mb-4 text-dark-2">
+        Every bag tells a story, and we'd love for you to be part of ours. 
+        Discover our magical collection and find the perfect piece that speaks to your heart.
+      </p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="/Products" class="btn btn-lg" appButton1Style>
+          <i class="fas fa-shopping-bag me-2"></i>Shop Collection
+        </a>
+        <a href="/Contact" class="btn btn-lg" appButton2Style>
+          <i class="fas fa-envelope me-2"></i>Get In Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

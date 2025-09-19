@@ -1,0 +1,313 @@
+<main class="">
+  <!-- Contact Hero Section -->
+  <section class="contact-hero d-flex align-items-center">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold text-dark-2 mb-3">Get In Touch</h1>
+          <p class="lead text-dark-2">
+            We'd love to hear from you! Whether you have questions about our handcrafted bags,
+            need assistance, or want to share your Fairy Tale experience, we're here to help.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="contact-card" appElmentScale>
+            <h2 class="text-center fw-bold mb-4 text-dark-2">Send Us a Message</h2>
+            <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Full Name *</label>
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="name"
+                    [(ngModel)]="contactForm.name"
+                    name="name"
+                    required
+                    placeholder="Enter your full name">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <input 
+                    type="email" 
+                    class="form-control" 
+                    id="email"
+                    [(ngModel)]="contactForm.email"
+                    name="email"
+                    required
+                    placeholder="Enter your email address">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="subject"
+                  [(ngModel)]="contactForm.subject"
+                  name="subject"
+                  placeholder="What's this about?">
+              </div>
+              <div class="mb-4">
+                <label for="message" class="form-label">Message *</label>
+                <textarea 
+                  class="form-control" 
+                  id="message"
+                  [(ngModel)]="contactForm.message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Tell us how we can help you..."></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-lg px-5" appButton1Style>
+                  <i class="fas fa-paper-plane me-2"></i>Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information -->
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5 text-dark-2">Contact Information</h2>
+      <div class="row g-4">
+        <!-- Address -->
+        <div class="col-lg-4">
+          <div class="contact-info-card text-center" appElmentScale>
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h5 class="fw-bold text-dark-2 mb-3">Visit Our Store</h5>
+            <p class="text-secondary mb-0">123 Craftsmanship Avenue</p>
+            <p class="text-secondary mb-0">Artisan District</p>
+            <p class="text-secondary">New York, NY 10001</p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="col-lg-4">
+          <div class="contact-info-card text-center" appElmentScale>
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h5 class="fw-bold text-dark-2 mb-3">Call Us</h5>
+            <p class="text-secondary mb-2">
+              <a href="tel:+15551234567" class="text-decoration-none text-secondary">
+                +1 (555) 123-4567
+              </a>
+            </p>
+            <p class="text-secondary mb-0">Monday - Friday: 9AM - 6PM</p>
+            <p class="text-secondary">Saturday: 10AM - 4PM</p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="col-lg-4">
+          <div class="contact-info-card text-center" appElmentScale>
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h5 class="fw-bold text-dark-2 mb-3">Email Us</h5>
+            <p class="text-secondary mb-2">
+              <a href="mailto:hello@fairytale.com" class="text-decoration-none text-secondary">
+                hello@fairytale.com
+              </a>
+            </p>
+            <p class="text-secondary mb-2">
+              <a href="mailto:support@fairytale.com" class="text-decoration-none text-secondary">
+                support@fairytale.com
+              </a>
+            </p>
+            <p class="text-secondary">We respond within 24 hours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Hours & Map -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <div class="business-hours" appElmentScale>
+            <h4 class="fw-bold text-dark-2 mb-4">
+              <i class="fas fa-clock me-2 text-pink"></i>Business Hours
+            </h4>
+            <div class="hour-row">
+              <span class="day">Monday</span>
+              <span class="time">9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="hour-row">
+              <span class="day">Tuesday</span>
+              <span class="time">9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="hour-row">
+              <span class="day">Wednesday</span>
+              <span class="time">9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="hour-row">
+              <span class="day">Thursday</span>
+              <span class="time">9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="hour-row">
+              <span class="day">Friday</span>
+              <span class="time">9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="hour-row">
+              <span class="day">Saturday</span>
+              <span class="time">10:00 AM - 4:00 PM</span>
+            </div>
+            <div class="hour-row">
+              <span class="day">Sunday</span>
+              <span class="time">Closed</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="map-container" appElmentScale>
+            <!-- Placeholder for map - in a real application, you would integrate with Google Maps or similar -->
+            <div class="bg-secondary d-flex align-items-center justify-content-center text-white" style="height: 300px; background: linear-gradient(135deg, #9b4d63, #e07a8b) !important;">
+              <div class="text-center">
+                <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+                <h5>Find Us Here</h5>
+                <p class="mb-0">Interactive map coming soon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media & Additional Info -->
+  <section class="py-5 bg-white">
+    <div class="container text-center">
+      <h3 class="fw-bold text-dark-2 mb-4">Connect With Us</h3>
+      <p class="text-secondary mb-4">
+        Follow us on social media for the latest updates, behind-the-scenes content, 
+        and exclusive offers on our handcrafted collections.
+      </p>
+      <div class="mb-4">
+        <a href="#" class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5 text-dark-2">Frequently Asked Questions</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item border-0 mb-3" appElmentScale>
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark-2" type="button" 
+                        data-bs-toggle="collapse" data-bs-target="#faq1">
+                  How long does shipping take?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary">
+                  We offer free standard shipping on orders over $75. Standard shipping typically takes 3-5 business days, 
+                  while express shipping takes 1-2 business days. All orders are carefully packaged by hand.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="accordion-item border-0 mb-3" appElmentScale>
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark-2" type="button" 
+                        data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Are your bags really handmade?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary">
+                  Yes! Every Fairy Tale bag is lovingly handcrafted by skilled artisans using traditional techniques. 
+                  Each piece is unique and made with attention to detail that only comes from human hands.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="accordion-item border-0 mb-3" appElmentScale>
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark-2" type="button" 
+                        data-bs-toggle="collapse" data-bs-target="#faq3">
+                  What is your return policy?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary">
+                  We offer a 30-day return policy for unused items in original condition. 
+                  Due to the handmade nature of our products, custom orders are final sale. 
+                  Please contact us if you have any concerns about your purchase.
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="accordion-item border-0" appElmentScale>
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-dark-2" type="button" 
+                        data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Do you offer custom designs?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-secondary">
+                  Absolutely! We love creating custom pieces. Contact us with your ideas and we'll work 
+                  with you to create something truly special. Custom orders typically take 2-4 weeks to complete.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5 bg-pink">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3 text-dark-2">Ready to Find Your Perfect Bag?</h2>
+      <p class="mb-4 text-dark-2">
+        Explore our magical collection of handcrafted bags and find the perfect piece 
+        to complement your unique style.
+      </p>
+      <a href="/Products" class="btn btn-lg me-3" appButton1Style>Shop Collection</a>
+      <a href="/Home" class="btn btn-lg" appButton2Style>Back to Home</a>
+    </div>
+  </section>
+</main>

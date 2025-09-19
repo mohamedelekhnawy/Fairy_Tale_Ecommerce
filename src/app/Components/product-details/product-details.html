@@ -1,0 +1,92 @@
+<div class="container py-5" *ngIf="product">
+  <div class="row g-5 align-items-start">
+
+    <!-- Main Image + Thumbnails -->
+    <div class="col-md-6">
+      <div class="text-center mb-4">
+        <img 
+          [src]="selectedImage || product.images[0]" 
+          [alt]="product.name" 
+          class="img-fluid rounded-3 shadow"
+          style="max-height: 400px; object-fit: cover;" 
+          appElmentScale>
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="d-flex gap-3 justify-content-center">
+        <img 
+          *ngFor="let img of product.images.slice(0,5)" 
+          [src]="img" 
+          [alt]="product.name" 
+          (click)="selectedImage = img"
+          class="img-thumbnail rounded-3 "
+          style="width: 80px; height: 80px; object-fit: cover; cursor: pointer; transition: 0.3s;"
+          [class.border-danger]="selectedImage === img"
+          appElmentScale>
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="col-md-6">
+      <h2 class="fw-bold mb-3">{{ product.name }}</h2>
+      <p class="text-muted mb-4">{{ product.description }}</p>
+
+      <!-- Color & Material -->
+      <div class="mb-3">
+        <strong class=" mb-2 me-2">Color:</strong>
+        <span class="badge rounded-pill bg-light text-dark px-3 py-2 shadow-sm">
+          {{ product.color }}
+        </span>
+      </div>
+
+      <div class="mb-4">
+        <strong class="mb-2 me-2">Material:</strong>
+        <span class="badge rounded-pill bg-light text-dark px-3 py-2 shadow-sm">
+          {{ product.material }}
+        </span>
+      </div>
+
+      <!-- Price -->
+      <h4 class="text-danger fw-bold mb-4">${{ product.price }}</h4>
+
+      <!-- Add to Cart -->
+      <button 
+        class="btn  text-light px-4 py-2 "
+        (click)="product && addToCart(product)" 
+        appElmentScale
+        appButton1Style>
+        <i class="fa-solid fa-cart-shopping me-2"></i> Add to Cart
+      </button>
+    </div>
+  </div>
+
+  <div class="container py-5" *ngIf="relatedProducts?.length">
+  <h3 class="fw-bold mb-4 text-center">You Might Also Love</h3>
+  <div class="row g-4 justify-content-center">
+
+    <div class="col-6 col-md-3" *ngFor="let item of relatedProducts">
+        <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden" appElmentScale>
+            <img 
+            [src]="item.images[0]" 
+            [alt]="item.name" 
+            class="card-img-top" 
+            style="height: 220px; object-fit: cover;"
+            appElmentScale>
+            <div class="card-body text-center">
+            <h6 class="fw-semibold mb-2">{{ item.name }}</h6>
+            <p class="text-danger fw-bold mb-0">${{ item.price }}</p>
+            </div>
+            <div class=" border-0 text-center mb-3">
+                <button class="btn" type="button"
+                (click)="goToDetails(item.id)" 
+                appButton2Style>
+                    Show Details
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
+    
+</div>
+
+</div>
