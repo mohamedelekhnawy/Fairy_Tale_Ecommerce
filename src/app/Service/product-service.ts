@@ -1,22 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 
-// interface Product {
-//   id: number;
-//   name: string;
-//   price: number;
-//   images: string[];
-//   material: string;
-//   color: string;
-//   description: string;
-// }
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-    private products: Product[]= [
+  private products: Product[] = [
+    // Crystal Bags
     {
       id: 1,
       name: 'Black Crystal Bag',
@@ -78,6 +68,23 @@ export class ProductService {
       description: 'Modern transparent crystal bag, chic and versatile. Perfect for evening events with a unique touch.'
     },
     {
+      id: 15,
+      name: 'Black Crystal Bag (Style 2)',
+      price: 120,
+      images: [
+        'assets/images/black-bag-s2-1.jpg',
+        'assets/images/black-bag-s2-2.jpg',
+        'assets/images/black-bag-s2-3.jpg',
+        'assets/images/black-bag-s2-4.jpg',
+        'assets/images/black-bag-s2-5.jpg'
+      ],
+      material: "Crystal",
+      color: 'Black',
+      description: 'Elegant handmade black crystal bag, perfect for evening outfits with a luxurious and bold style.'
+    },
+    
+    // Pearl Bags
+    {
       id: 5,
       name: 'Brown Pearl Bag',
       price: 120,
@@ -94,7 +101,7 @@ export class ProductService {
     },
     {
       id: 6,
-      name: 'Multi-color Pearl Bag',
+      name: 'Multi-color Pearl Bag (Style 1)',
       price: 120,
       images: [
         'assets/images/colored-bag-s1-1.jpg',
@@ -109,7 +116,7 @@ export class ProductService {
     },
     {
       id: 7,
-      name: 'Multi-color Pearl Bag',
+      name: 'Multi-color Pearl Bag (Style 2)',
       price: 120,
       images: [
         'assets/images/colored-bag-s2-1.jpg',
@@ -125,7 +132,7 @@ export class ProductService {
     {
       id: 8,
       name: 'Wooden Pearl Bag',
-      price: 120,
+      price: 250,
       images: [
         'assets/images/green-bag-s1-1.jpg',
         'assets/images/green-bag-s1-2.jpg',
@@ -152,8 +159,8 @@ export class ProductService {
     },
     {
       id: 10,
-      name: 'White Pearl Bag',
-      price: 120,
+      name: 'White Pearl Bag (Style 1)',
+      price: 305,
       images: [
         'assets/images/white-bag-s1-1.jpg',
         'assets/images/white-bag-s1-2.jpg',
@@ -167,8 +174,8 @@ export class ProductService {
     },
     {
       id: 11,
-      name: 'White Pearl Bag',
-      price: 120,
+      name: 'White Pearl Bag (Style 2)',
+      price: 600,
       images: [
         'assets/images/white-bag-s2-1.jpg',
         'assets/images/white-bag-s2-2.jpg',
@@ -182,8 +189,8 @@ export class ProductService {
     },
     {
       id: 12,
-      name: 'White Pearl Bag',
-      price: 120,
+      name: 'White Pearl Bag (Style 3)',
+      price: 400,
       images: [
         'assets/images/white-bag-s3-1.jpg',
         'assets/images/white-bag-s3-2.jpg',
@@ -197,8 +204,8 @@ export class ProductService {
     },
     {
       id: 13,
-      name: 'White Pearl Bag',
-      price: 120,
+      name: 'White Pearl Bag (Style 4)',
+      price: 180,
       images: [
         'assets/images/white-bag-s4-1.jpg',
         'assets/images/white-bag-s4-2.jpg',
@@ -213,7 +220,7 @@ export class ProductService {
     {
       id: 14,
       name: 'Transparent Bag with Print',
-      price: 120,
+      price: 150,
       images: [
         'assets/images/withName-bag-s1-1.jpg',
         'assets/images/withName-bag-s1-2.jpg',
@@ -225,30 +232,119 @@ export class ProductService {
       color: 'Transparent',
       description: 'Handmade transparent bag with printed details, modern and trendy. A chic accessory for standout looks.'
     },
+    
+    // Additional Bags (from Home component)
     {
-      id: 15,
-      name: 'Black Crystal Bag',
+      id: 101,
+      name: 'Elegant Tote Bag',
       price: 120,
-      images: [
-        'assets/images/black-bag-s2-1.jpg',
-        'assets/images/black-bag-s2-2.jpg',
-        'assets/images/black-bag-s2-3.jpg',
-        'assets/images/black-bag-s2-4.jpg',
-        'assets/images/black-bag-s2-5.jpg'
-      ],
-      material: "Crystal",
+      images: ['assets/images/4.jpg'],
+      material: 'Leather',
+      color: 'Brown',
+      description: 'Elegant handmade tote bag, perfect for daily use with timeless style.'
+    },
+    {
+      id: 102,
+      name: 'Classic Handbag',
+      price: 120,
+      images: ['assets/images/5.jpg'],
+      material: 'Crystal',
       color: 'Black',
-      description: 'Elegant handmade black crystal bag, perfect for evening outfits with a luxurious and bold style.'
+      description: 'Classic handmade handbag with sophisticated design for special occasions.'
+    },
+    {
+      id: 103,
+      name: 'Modern Crossbody',
+      price: 120,
+      images: ['assets/images/9.jpg'],
+      material: 'Pearl',
+      color: 'Multi-color',
+      description: 'Modern crossbody bag with contemporary style for everyday elegance.'
+    },
+    {
+      id: 104,
+      name: 'Urban Backpack',
+      price: 120,
+      images: ['assets/images/7.jpg'],
+      material: 'Fabric',
+      color: 'Green',
+      description: 'Urban backpack combining functionality with handcrafted beauty.'
     }
   ];
-    constructor() {}
 
+  constructor() { }
+
+  // Get all products
   getProducts(): Product[] {
     return this.products;
   }
 
-
+  // Get product by ID
   getProductById(id: number): Product | undefined {
     return this.products.find(p => p.id === id);
+  }
+
+  // Get products by material
+  getProductsByMaterial(material: string): Product[] {
+    return this.products.filter(p => p.material.toLowerCase() === material.toLowerCase());
+  }
+
+  // Get products by color
+  getProductsByColor(color: string): Product[] {
+    return this.products.filter(p => p.color.toLowerCase() === color.toLowerCase());
+  }
+
+  // Get products by price range
+  getProductsByPriceRange(minPrice: number, maxPrice: number): Product[] {
+    return this.products.filter(p => p.price >= minPrice && p.price <= maxPrice);
+  }
+
+  // Search products by name
+  searchProducts(searchTerm: string): Product[] {
+    return this.products.filter(p => 
+      p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+
+  // Get featured/best seller products
+  getFeaturedProducts(count: number = 4): Product[] {
+    return this.products.slice(0, count);
+  }
+
+  // Get random products (for recommendations)
+  getRandomProducts(count: number = 4, excludeId?: number): Product[] {
+    let availableProducts = this.products;
+    if (excludeId) {
+      availableProducts = this.products.filter(p => p.id !== excludeId);
+    }
+    
+    const shuffled = [...availableProducts].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  }
+
+  // Get related products by material
+  getRelatedProducts(productId: number, count: number = 4): Product[] {
+    const currentProduct = this.getProductById(productId);
+    if (!currentProduct) return [];
+    
+    return this.products
+      .filter(p => p.material === currentProduct.material && p.id !== productId)
+      .slice(0, count);
+  }
+
+  // Get all unique materials
+  getUniqueMaterials(): string[] {
+    return [...new Set(this.products.map(p => p.material))];
+  }
+
+  // Get all unique colors
+  getUniqueColors(): string[] {
+    return [...new Set(this.products.map(p => p.color))];
+  }
+
+  // Get product count
+  getProductCount(): number {
+    return this.products.length;
   }
 }

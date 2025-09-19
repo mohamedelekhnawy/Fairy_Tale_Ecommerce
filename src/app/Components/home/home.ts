@@ -1,23 +1,25 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { ElmentScale } from '../../Directives/elment-scale';
 import { Button1Style } from '../../Directives/button1-style';
 import { Button2Style } from '../../Directives/button2-style';
 import { CartService } from '../../Service/cart-service';
+import { ProductService } from '../../Service/product-service';
 
 @Component({
   selector: 'app-homepage',
-  imports: [CommonModule, ElmentScale,Button1Style,Button2Style],
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.css'
+  imports: [CommonModule, ElmentScale, Button1Style, Button2Style],
+  templateUrl: './home.html',
+  styleUrl: './home.css'
 })
-export class HomepageComponent {
+export class Home {
 
   // Sample products for homepage
   bestSellers = [
     {
-      id: 101,
-      name: 'Elegant Tote Bag',
+      id: 8,
+      name: 'Wooden Pearl Bag',
       price: 120,
       images: ['assets/images/4.jpg'],
       material: 'Leather',
@@ -25,9 +27,9 @@ export class HomepageComponent {
       description: 'Elegant handmade tote bag, perfect for daily use with timeless style.'
     },
     {
-      id: 102, 
+      id: 102,
       name: 'Classic Handbag',
-      price: 150,
+      price: 120,
       images: ['assets/images/5.jpg'],
       material: 'Crystal',
       color: 'Black',
@@ -36,7 +38,7 @@ export class HomepageComponent {
     {
       id: 103,
       name: 'Modern Crossbody',
-      price: 180,
+      price: 120,
       images: ['assets/images/9.jpg'],
       material: 'Pearl',
       color: 'Multi-color',
@@ -44,8 +46,8 @@ export class HomepageComponent {
     },
     {
       id: 104,
-      name: 'Urban Backpack', 
-      price: 90,
+      name: 'Red Crystal Bag',
+      price: 120,
       images: ['assets/images/7.jpg'],
       material: 'Fabric',
       color: 'Green',
@@ -53,7 +55,11 @@ export class HomepageComponent {
     }
   ];
 
-  constructor(private cartService: CartService) { }
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+    private productService: ProductService
+  ) { }
 
   addToCart(product: any) {
     const item = {
@@ -62,9 +68,18 @@ export class HomepageComponent {
       qty: 1
     };
     this.cartService.addItem(item);
-    
+
     // Optional: Show success message
     alert(`${product.name} added to cart!`);
   }
 
+  // Navigate to product details
+  navigateToProductDetails(productId: number) {
+    this.router.navigate(['/product', productId]);
+  }
+
+  // Navigate to category products
+  navigateToCategory(category: string) {
+    this.router.navigate(['/products'], { queryParams: { category: category } });
+  }
 }

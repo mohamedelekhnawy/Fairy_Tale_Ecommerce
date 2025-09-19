@@ -1,0 +1,7 @@
+.filter {
+    position: sticky;
+    top: 20px;
+    /* المسافة من أعلى الصفحة */
+    align-self: start;
+    /* يخلي الطول ياخد ارتفاع المحتوى */
+}

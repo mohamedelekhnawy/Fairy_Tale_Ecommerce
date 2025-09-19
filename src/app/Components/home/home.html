@@ -1,0 +1,189 @@
+<main class="">
+    <!-- Hero Section -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-dark-2">Handmade Bags for Modern Elegance</h1>
+                    <p class="lead text-secondary">
+                        Discover our enchanting collection of handcrafted bags, where every stitch tells a story
+                        of artisan magic and timeless beauty.
+                    </p>
+                    <a href="Products" class="btn btn-lg" appButton1Style>Explore Collection</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="overflow-hidden rounded-3 shadow-lg" appElmentScale>
+                        <img src="assets/images/10.jpg" class="img-fluid hero-img" alt="Handcrafted leather handbag" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-2 text-dark-2">Featured Categories</h2>
+            <p class="text-center text-secondary mb-4">
+                Discover our magical collection of handcrafted bags
+            </p>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                <!-- Tote Bags -->
+                <div class="col">
+                    <div class="card border-0 shadow-sm text-center" appElmentScale>
+                        <img src="assets/images/1.jpg" class="card-img-top" alt="Tote Bags" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold text-dark-2">Tote Bags</h5>
+                            <p class="text-secondary mb-3">Spacious style for your everyday essentials</p>
+                            <a href="Products" class="btn btn-lg" appButton2Style>Shop Tote Bags</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clutch Bags -->
+                <div class="col">
+                    <div class="card border-0 shadow-sm text-center" appElmentScale>
+                        <img src="assets/images/2.jpg" class="card-img-top" alt="Clutch Bags" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold text-dark-2">Clutch Bags</h5>
+                            <p class="text-secondary mb-3">Elegant accessory for special occasions</p>
+                            <a href="Products" class="btn btn-lg" appButton2Style>Shop Clutch Bags</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shoulder Bags -->
+                <div class="col">
+                    <div class="card border-0 shadow-sm text-center" appElmentScale>
+                        <img src="assets/images/3.jpg" class="card-img-top" alt="Shoulder Bags" />
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold text-dark-2">Shoulder Bags</h5>
+                            <p class="text-secondary mb-3">Comfortable elegance for daily essentials</p>
+                            <a href="" class="btn btn-lg" appButton2Style>Shop Shoulder Bags</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-2 text-dark-2">Best Sellers</h2>
+            <p class="text-center text-secondary mb-4">Our most beloved handcrafted treasures</p>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <!-- Product Cards -->
+                <div class="col" *ngFor="let product of bestSellers">
+                    <div class="card h-100 border-0 shadow-sm text-center" appElmentScale>
+                        <img [src]="product.images[0]" class="card-img-top" [alt]="product.name"
+                            style="height: 200px; object-fit: cover; cursor: pointer;"
+                            (click)="navigateToProductDetails(product.id)" />
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-semibold text-dark-2">{{ product.name }}</h5>
+                            <p class="text-secondary small mb-2">{{ product.material }} • {{ product.color }}</p>
+                            <p class="fw-bold text-pink mb-3">${{ product.price }}</p>
+
+                            <!-- Button Group -->
+                            <div class="mt-auto">
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-outline-secondary"
+                                        (click)="navigateToProductDetails(product.id)">
+                                        View Details
+                                    </button>
+                                    <button class="btn flex-fill" appButton2Style (click)="addToCart(product)">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Craftsmanship Story -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6 text-center">
+                    <div class="overflow-hidden rounded-3 shadow-sm" appElmentScale>
+                        <img src="assets/images/12.jpg" class="img-fluid" alt="Craftsmanship Image" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold text-dark-2">Our Craftsmanship Story</h2>
+                    <p class="text-secondary">
+                        Every Fairy Tale bag is lovingly handcrafted by skilled artisans who pour their hearts
+                        into creating something truly magical. From selecting the finest materials to the final
+                        stitch, each piece tells a story of dedication, passion, and timeless elegance.
+                    </p>
+                    <a href="Products" class="btn" appButton1Style>Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Our Customers Say -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-2 text-dark-2">What Our Customers Say</h2>
+            <p class="text-center text-secondary mb-4">
+                Hear from those who cherish our handcrafted creations
+            </p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Customer 1 -->
+                <div class="col">
+                    <div class="card border-0 shadow-sm p-3 text-center" appElmentScale>
+                        <div class="card-body">
+                            <p class="card-text fst-italic text-secondary">
+                                “My Fairy Tale bag is absolutely magical! The craftsmanship is incredible and I
+                                receive compliments everywhere I go.”
+                            </p>
+                            <h6 class="fw-semibold mt-3 text-dark-2">-Sarah</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer 2 -->
+                <div class="col">
+                    <div class="card border-0 shadow-sm p-3 text-center" appElmentScale>
+                        <div class="card-body">
+                            <p class="card-text fst-italic text-secondary">
+                                “The quality is outstanding and the attention to detail is remarkable. These bags
+                                are true works of art!”
+                            </p>
+                            <h6 class="fw-semibold mt-3 text-dark-2">-Mia</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer 3 -->
+                <div class="col">
+                    <div class="card border-0 shadow-sm p-3 text-center" appElmentScale>
+                        <div class="card-body">
+                            <p class="card-text fst-italic text-secondary">
+                                “I love supporting handmade businesses, and Fairy Tale exceeded all my expectations.
+                                Simply beautiful!”
+                            </p>
+                            <h6 class="fw-semibold mt-3 text-dark-2">-Wafaa</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Collection Section Before Footer -->
+    <section class="py-5 bg-pink">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3 text-dark-2">Discover Our Collection</h2>
+            <p class="mb-4 text-dark-2">
+                Step into a world where every bag tells a story of craftsmanship, elegance, and timeless
+                beauty.
+            </p>
+            <a href="Products" class="btn btn-lg" appButton1Style>Shop Now</a>
+        </div>
+    </section>
+</main>

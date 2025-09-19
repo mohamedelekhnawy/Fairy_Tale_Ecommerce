@@ -1,0 +1,18 @@
+.btn-grey {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.btn-grey:hover {
+    background-color: #565e64;
+    border-color: #51585e;
+    color: #fff;
+}
+
+.btn-grey:focus {
+    background-color: #565e64;
+    border-color: #51585e;
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+}

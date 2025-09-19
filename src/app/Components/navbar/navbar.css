@@ -1,13 +1,48 @@
+/* Cart icon styling */
 .fa-bag-shopping {
     transition: color 0.3s ease, transform 0.3s ease;
     color: #6c757d;
+    position: relative;
 }
 
 .fa-bag-shopping.added {
-    color: #e5b1b1;
-    transform: scale(1.3);
+    color: #7d3c50;
+    transform: scale(1.2);
 }
 
+/* Navbar icon hover effects */
+.nav-icon {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-icon:hover {
+    color: #7d3c50 !important;
+    transform: translateY(-2px);
+}
+
+.nav-icon:hover i {
+    color: #7d3c50;
+}
+
+/* Cart badge styling */
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 0.7rem;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7d3c50 !important;
+    color: white;
+    border: 2px solid white;
+}
+
+/* Pop animation for cart items */
 @keyframes pop {
     0% {
         transform: scale(1);
@@ -24,5 +59,30 @@
 
 .fa-bag-shopping.added {
     animation: pop 0.3s ease forwards;
-    color: #8b5a8c;
+    color: #7d3c50;
+}
+
+/* Navigation links hover */
+.nav-link {
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #7d3c50 !important;
+}
+
+.nav-link.active {
+    color: #7d3c50 !important;
+    font-weight: 600;
+}
+
+/* Navbar brand hover */
+.navbar-brand {
+    transition: color 0.3s ease;
+    font-family: 'Lora', serif
+}
+
+.navbar-brand:hover {
+    color: #7d3c50 !important;
 }
