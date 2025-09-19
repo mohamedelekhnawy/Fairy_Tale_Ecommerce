@@ -6,3 +6,7 @@ h5,
 h6 {
     font-family: 'Lora', serif;
 }
+
+body{
+    padding-top: 85px;
+}
