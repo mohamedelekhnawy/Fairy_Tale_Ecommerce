@@ -14,15 +14,17 @@
             </ul>
             <div class="d-flex ms-lg-3">
 
-                <button class="btn btn-link text-dark me-2"><i class="fa-regular fa-heart"></i></button>
-                <button class="btn btn-link text-dark"><i class="fa-regular fa-user"></i></button>
-                <button class="btn btn-link text-dark"><i class="fa-solid fa-bag-shopping">
-                    <span class="badge bg-pink" *ngIf="cartCount > 0">{{ cartCount }}</span>
-                </i></button>
+                <a class="btn btn-link text-dark me-2"><i class="fa-regular fa-heart"></i></a>
+                <a class="btn btn-link text-dark"><i class="fa-regular fa-user"></i></a>
+                <a class="btn btn-link text-dark">
+                    <i class="fa-solid fa-bag-shopping">
+                        <span class="badge bg-pink" *ngIf="cartCount > 0">{{ cartCount }}</span>
+                    </i>
+                </a>
 
-                <a href="#" class="btn btn-link text-dark me-2"><i class="fa-regular fa-heart"></i></a>
+                <!-- <a href="#" class="btn btn-link text-dark me-2"><i class="fa-regular fa-heart"></i></a>
                 <a href="#" class="btn btn-link text-dark"><i class="fa-regular fa-user"></i></a>
-                <a href="#" class="btn btn-link text-dark"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="#" class="btn btn-link text-dark"><i class="fa-solid fa-bag-shopping"></i></a> -->
             </div>
         </div>
     </div>
