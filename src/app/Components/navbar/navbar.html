@@ -15,7 +15,7 @@
             </ul>
             <div class="d-flex ms-lg-3">
                 <!-- Favorites Icon with dynamic styling -->
-                <a class="btn btn-link text-dark me-2 nav-icon favorites-icon" (click)="goToFavorites()"
+                <a class="btn btn-link text-dark me-2 nav-icon favorites-icon"  href="favorites"
                     routerLink="/favorites" routerLinkActive="active">
                     <i class="fa-regular fa-heart" [class.fa-solid]="shouldColorHeart"
                         [class.has-favorites]="favoritesCount > 0">
@@ -24,7 +24,7 @@
                 </a>
 
                 <!-- User Icon -->
-                <a class="btn btn-link text-dark nav-icon">
+                <a class="btn btn-link text-dark nav-icon" href="Register">
                     <i class="fa-regular fa-user"></i>
                 </a>
 
